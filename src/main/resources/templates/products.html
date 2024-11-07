@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Include jQuery before Bootstrap's JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">Liste de produits</div>
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <th>ID</th><th>DES</th><th>Prix</th><th>Quantité</th>
+                </tr>
+                <tr th:each="p : ${listProduits}">
+                    <td th:text="${p.id}"></td>
+                    <td th:text="${p.designation}"></td>
+                    <td th:text="${p.prix}"></td>
+                    <td th:text="${p.quantite}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
